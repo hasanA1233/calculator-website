@@ -1,0 +1,6 @@
+<% layout('layout') %>
+<div class="text-center mt-5">
+  <h1 class="display-4">404</h1>
+  <p class="lead">Sorry, that page does not exist.</p>
+  <a href="/" class="btn btn-primary">Return Home</a>
+</div>
