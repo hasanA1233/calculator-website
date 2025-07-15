@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= typeof title !== 'undefined' ? title : 'Academic Calculators' %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+  <main class="container mt-4 mb-4">
+    <%- body %>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
