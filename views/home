@@ -1,0 +1,14 @@
+<% layout('layout') %>
+<h1 class="mb-4">Academic & Educational Calculators</h1>
+<div class="row">
+  <% calculators.forEach(calc => { %>
+    <div class="col-md-6 col-lg-4 mb-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><%= calc.name %></h5>
+          <a href="<%= calc.path %>" class="btn btn-primary">Open Calculator</a>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+</div>
