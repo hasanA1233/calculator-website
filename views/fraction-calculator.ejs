@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+        <form action="/fraction-calculator" method="POST">
+            <div class="form-group">
+                <label for="fraction1">Fraction 1 (e.g., 1/2)</label>
+                <input type="text" id="fraction1" name="fraction1" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="operator">Operator</label>
+                <select id="operator" name="operator" class="form-control" required>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fraction2">Fraction 2 (e.g., 3/4)</label>
+                <input type="text" id="fraction2" name="fraction2" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+        <% if (result) { %>
+            <div class="result">
+                <h2>Result: <%= result %></h2>
+            </div>
+        <% } %>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

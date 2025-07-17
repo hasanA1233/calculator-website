@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+        <form action="/pace-calculator" method="POST">
+            <div class="form-group">
+                <label for="distance">Distance</label>
+                <input type="number" step="any" id="distance" name="distance" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="hours">Time (Hours)</label>
+                <input type="number" id="hours" name="hours" class="form-control" value="0" required>
+            </div>
+            <div class="form-group">
+                <label for="minutes">Time (Minutes)</label>
+                <input type="number" id="minutes" name="minutes" class="form-control" value="0" required>
+            </div>
+            <div class="form-group">
+                <label for="seconds">Time (Seconds)</label>
+                <input type="number" id="seconds" name="seconds" class="form-control" value="0" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+        <% if (result) { %>
+            <div class="result">
+                <h2>Pace: <%= result %></h2>
+            </div>
+        <% } %>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

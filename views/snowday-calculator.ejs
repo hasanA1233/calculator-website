@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+        <form action="/snowday-calculator" method="POST">
+            <div class="form-group">
+                <label for="inches">Inches of Snow</label>
+                <input type="number" id="inches" name="inches" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="timing">Timing</label>
+                <select id="timing" name="timing" class="form-control" required>
+                    <option value="overnight">Overnight</option>
+                    <option value="morning">Morning</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+        <% if (result) { %>
+            <div class="result">
+                <h2>Chance of Snow Day: <%= result %>%</h2>
+            </div>
+        <% } %>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

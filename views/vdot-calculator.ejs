@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+        <form action="/vdot-calculator" method="POST">
+            <div class="form-group">
+                <label for="distance">Distance:</label>
+                <input type="number" id="distance" name="distance" required>
+                <select id="distance_unit" name="distance_unit">
+                    <option value="meters">Meters</option>
+                    <option value="kilometers">Kilometers</option>
+                    <option value="miles">Miles</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="time">Time (in minutes):</label>
+                <input type="number" id="time" name="time" required>
+            </div>
+            <button type="submit">Calculate VDOT</button>
+        </form>
+        <% if (result !== null) { %>
+            <div class="result">
+                <h2>Your VDOT is: <%= result %></h2>
+            </div>
+        <% } %>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

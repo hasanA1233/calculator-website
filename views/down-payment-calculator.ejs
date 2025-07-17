@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+        <form action="/down-payment-calculator" method="POST">
+            <div class="form-group">
+                <label for="homePrice">Home Price</label>
+                <input type="number" step="any" id="homePrice" name="homePrice" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="downPaymentPercentage">Down Payment Percentage (%)</label>
+                <input type="number" step="any" id="downPaymentPercentage" name="downPaymentPercentage" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+        <% if (result) { %>
+            <div class="result">
+                <h2><%= result %></h2>
+            </div>
+        <% } %>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+        <form action="/scientific-notation-calculator" method="POST">
+            <div class="form-group">
+                <label for="number">Number</label>
+                <input type="number" step="any" id="number" name="number" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Convert</button>
+        </form>
+        <% if (result) { %>
+            <div class="result">
+                <h2>Result: <%= result %></h2>
+            </div>
+        <% } %>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

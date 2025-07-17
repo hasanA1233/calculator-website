@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+        <div class="accordion">
+            <% Object.keys(calculators).forEach(category => { %>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h2><%= category %></h2>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="calculator-grid">
+                            <% calculators[category].forEach(calculator => { %>
+                                <div class="calculator-card">
+                                    <a href="/<%= calculator.path %>"><%= calculator.name %></a>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>
